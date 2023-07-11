@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coding Quiz</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,300&family=Mitr:wght@200;300;400&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+</head>
+<body class="box">
+  <div id="quiz-container">
+    <h1>How well do you know JavaScript?</h1>
+    <button id="start-btn">Start Quiz</button>
+    <div id="question-container"></div>
+    <div id="options-container"></div>
+    <div id="feedback-container"></div>
+    <div id="timer-container"></div>
+    <div id="game-over-container"></div>
+  </div>
+
+  <div id="score-form-container" class="hidden">
+    <h2 class="hidden">Game Over!</h2>
+    <p>Your score: <span id="final-score"></span></p>
+    <button id="play-again-btn" style="display: none;">Take Quiz Again?</button>
+    <form id="score-form">
+      <label for="initials">Enter your initials:</label>
+      <input type="text" id="initials" required>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
