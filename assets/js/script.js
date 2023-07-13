@@ -27,7 +27,7 @@ const questions = [
   },
 ];
 
-// Quiz variables
+// page variables
 let currentQuestionIndex = 0;
 let score = 0;
 let timeLeft = 120;
@@ -45,16 +45,19 @@ const initialsInput = document.getElementById("initials");
 const scoreForm = document.getElementById("score-form");
 const playAgainBtn = document.getElementById("play-again-btn");
 
+// event listeners
 startBtn.addEventListener("click", startQuiz);
 scoreForm.addEventListener("submit", saveScore);
 playAgainBtn.addEventListener("click", playAgain);
 
+// functions
 function startQuiz() {
   startTimer();
   showQuestion();
   startBtn.style.display = "none";
 }
 
+// countdown timer
 function startTimer() {
   timerId = setInterval(() => {
     timeLeft--;
@@ -79,6 +82,7 @@ function showQuestion() {
   }
 }
 
+// answer checking 
 function checkAnswer(event) {
   const selectedOption = event.target;
   const currentQuestion = questions[currentQuestionIndex];
@@ -112,10 +116,11 @@ function endQuiz() {
   playAgainBtn.style.display = "block";
 }
 
+// storing score in console
 function saveScore(event) {
   event.preventDefault();
   const initials = initialsInput.value;
-  // TODO: Save the initials and score to a storage or send it to a server
+  
   console.log("Initials: " + initials + ", Score: " + score);
   scoreForm.reset();
 }
